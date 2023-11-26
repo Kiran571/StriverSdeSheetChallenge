@@ -1,0 +1,21 @@
+int n = nums.length;
+        int ct = 0; //count
+        int el = 0; //element
+
+        //applying the algorithm
+        for(int i=0;i<n;i++){
+            if(ct==0){
+                ct=1;
+                el=nums[i];
+            }
+            else if(el == nums[i]) ct++;
+            else ct--;
+        }
+
+        //checking if the stored element is the majority element:
+        int ct1=0;
+        for(int i=0;i<n;i++){
+            if(nums[i] == el) ct1++;
+        }
+        if(ct1>(n/2)) return el;
+        return -1;
